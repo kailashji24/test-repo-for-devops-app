@@ -1,0 +1,9 @@
+# Ignore Terraform system files
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.lock.hcl
+
+# Ignore Java build files
+target/
+*.jar
