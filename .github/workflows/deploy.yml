@@ -36,11 +36,11 @@ jobs:
         zip -r deploy.zip . -x "*.git*" "terraform/*"
 
         echo "Uploading to S3..."
-        aws s3 cp deploy.zip s3://cicd-artifacts-264d0eae/deploy.zip
+        aws s3 cp deploy.zip s3://cicd-artifacts-3f62b38f/deploy.zip
 
         echo "Triggering CodeDeploy..."
         aws deploy create-deployment \
           --application-name Lift-and-Shift-App \
           --deployment-config-name CodeDeployDefault.OneAtATime \
           --deployment-group-name Lift-and-Shift-DG \
-          --s3-location bucket=cicd-artifacts-264d0eae,bundleType=zip,key=deploy.zip
+          --s3-location bucket=cicd-artifacts-3f62b38f,bundleType=zip,key=deploy.zip
